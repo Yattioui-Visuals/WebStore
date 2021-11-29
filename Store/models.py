@@ -4,6 +4,7 @@ from django.db import models
 from Store.validators import validate_nonzero
 
 
+# Note I should have worked with the unique function to clean up my models
 class Customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=200)
