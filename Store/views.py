@@ -5,6 +5,12 @@ from .models import Products, Customer, Orders
 from .permissions import IsAdminUserOrReadOnly, IsAdminUserOrOwner, IsAdminUserOrOwnerOrder
 from .serializers import ProductsSerializer, CustomerSerializer, OrdersSerializer
 
+"""
+I had not worked with the Django Rest Framework before, so when I saw the assignment I started reading the doc, and 
+following along with some tutorial to get the hang of it. So i didn't get complete it as fully as I wanted to
+but I really enjoyed learning the framework and defintely will keep expanding on this project :)
+"""
+
 
 class ProductList(generics.ListCreateAPIView):
     queryset = Products.objects.all()
@@ -58,6 +64,7 @@ class OrderCreate(generics.CreateAPIView):
         headers = self.get_success_headers(serializer.data)
 
         # Products.objects.get(product_name=validated_data['product']).stock -= 1
+        # Trying to give the stock some logic so the orders would get handled as intended
 
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 

@@ -7,6 +7,11 @@ from rest_framework.test import APITestCase, APIClient
 
 
 class WebstoreTest(APITestCase):
+    """
+    I started working on my testcase , had to learn how Api's got tested, but wasnt too hard to get into
+    Due to my time , I didnt have enough time to create full tests, but I do believe it shows I was going the right way
+    """
+
     def setup(self):
         self.client = APIClient()
 

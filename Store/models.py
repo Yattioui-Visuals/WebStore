@@ -32,8 +32,6 @@ class Products(models.Model):
         return self.product_name
 
 
-
-
 class Orders(models.Model):
     order_id = models.CharField(max_length=9, default='IO')
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
